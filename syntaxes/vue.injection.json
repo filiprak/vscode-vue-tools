@@ -9,6 +9,10 @@
                     "include": "text.html.derivative"
                 }
             ]
+        },
+        {
+            "match":"{{_(\\*[a-zA-Z]{2,4}\\*)?(.*?)_}}",
+            "name": "comment"
         }
     ]
 }
