@@ -129,7 +129,7 @@ documents.onDidChangeContent(change => {
 
 async function validateTextDocument(textDocument) {
     // In this simple example we get the settings for every validate run.
-    let settings = await getDocumentSettings(textDocument.uri);
+    let settings = await getDocumentSettings(textDocument.uri) || defaultSettings;
 
     // The validator creates diagnostics for all uppercase words length 2 and more
     let text = textDocument.getText();

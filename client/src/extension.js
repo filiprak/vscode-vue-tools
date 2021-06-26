@@ -11,6 +11,8 @@ const {
 let client;
 
 exports.activate = (context) => {
+
+	console.log('Activating client');
 	// The server is implemented in node
 	let serverModule = context.asAbsolutePath(path.join('server', 'src', 'server.js'));
 	// The debug options for the server
@@ -31,7 +33,7 @@ exports.activate = (context) => {
 	// Options to control the language client
 	let clientOptions = {
 		// Register the server for javascript documents
-		documentSelector: [{ scheme: 'file', language: 'plaintext' }],
+		documentSelector: [{ scheme: 'file', language: 'javascript' }],
 		synchronize: {
 			// Notify the server about file changes to '.clientrc files contained in the workspace
 			fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
