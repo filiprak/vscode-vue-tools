@@ -13,7 +13,7 @@
 	],
 	"activationEvents": [
 		"onCommand:vue-tools.vueTools",
-		"onLanguage:javascript"
+		"onLanguage:plaintext"
 	],
 	"configuration": {
 		"type": "object",
@@ -33,6 +33,18 @@
 			{
 				"command": "vue-tools.vueTools",
 				"title": "Vue Tools"
+			}
+		],
+		"grammars": [
+			{
+				"scopeName": "vue.injection",
+				"path": "./syntaxes/vue.injection.json",
+				"injectTo": [
+					"source.js"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.block.html": "html"
+				}
 			}
 		]
 	},

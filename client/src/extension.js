@@ -31,7 +31,7 @@ exports.activate = (context) => {
 	// Options to control the language client
 	let clientOptions = {
 		// Register the server for javascript documents
-		documentSelector: [{ scheme: 'file', language: 'javascript' }],
+		documentSelector: [{ scheme: 'file', language: 'plaintext' }],
 		synchronize: {
 			// Notify the server about file changes to '.clientrc files contained in the workspace
 			fileEvents: workspace.createFileSystemWatcher('**/.clientrc')

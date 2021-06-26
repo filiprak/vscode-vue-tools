@@ -1,0 +1,14 @@
+{
+    "scopeName": "vue.injection",
+    "injectionSelector": "R:string.quoted.single -comment",
+    "patterns": [
+        {
+            "contentName": "meta.embedded.block.html",
+            "patterns": [
+                {
+                    "include": "text.html.derivative"
+                }
+            ]
+        }
+    ]
+}
