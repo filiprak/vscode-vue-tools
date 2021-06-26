@@ -2,6 +2,7 @@
 	"name": "vue-tools-client",
 	"description": "Vue Tools part of a language server",
 	"author": "Filip Rak",
+	"publisher": "filiprak",
 	"license": "MIT",
 	"version": "0.0.1",
 	"engines": {

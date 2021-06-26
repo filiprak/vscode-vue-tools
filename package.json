@@ -2,6 +2,8 @@
 	"name": "vue-tools",
 	"displayName": "vue-tools",
 	"description": "Vue development tools",
+	"author": "Filip Rak",
+	"publisher": "filiprak",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.57.0"

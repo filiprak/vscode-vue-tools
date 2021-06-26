@@ -1,16 +1,16 @@
-import * as path from 'path';
-import { workspace, ExtensionContext } from 'vscode';
+const path = require('path');
+const { workspace, ExtensionContext } = require('vscode');
 
-import {
+const {
 	LanguageClient,
 	LanguageClientOptions,
 	ServerOptions,
 	TransportKind
-} from 'vscode-languageclient/node';
+} = require('vscode-languageclient/node');
 
 let client;
 
-export function activate(context) {
+exports.activate = (context) => {
 	// The server is implemented in node
 	let serverModule = context.asAbsolutePath(path.join('server', 'src', 'server.js'));
 	// The debug options for the server
@@ -50,7 +50,7 @@ export function activate(context) {
 	client.start();
 }
 
-export function deactivate() {
+exports.deactivate = () => {
 	if (!client) {
 		return undefined;
 	}

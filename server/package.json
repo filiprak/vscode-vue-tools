@@ -3,6 +3,7 @@
 	"description": "Vue Tools server",
 	"version": "1.0.0",
 	"author": "Filip Rak",
+	"publisher": "filiprak",
 	"license": "MIT",
 	"engines": {
 		"node": "*"
