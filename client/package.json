@@ -1,0 +1,16 @@
+{
+	"name": "vue-tools-client",
+	"description": "Vue Tools part of a language server",
+	"author": "Filip Rak",
+	"license": "MIT",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^7.0.0"
+	},
+	"devDependencies": {
+		"vscode-test": "^1.3.0"
+	}
+}

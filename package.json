@@ -10,14 +10,27 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:vue-tools.helloWorld"
+		"onCommand:vue-tools.vueTools",
+		"onLanguage:javascript"
 	],
-	"main": "./extension.js",
+	"configuration": {
+		"type": "object",
+		"title": "Example configuration",
+		"properties": {
+			"languageServerExample.maxNumberOfProblems": {
+				"scope": "resource",
+				"type": "number",
+				"default": 100,
+				"description": "Controls the maximum number of problems produced by the server."
+			}
+		}
+	},
+	"main": "./client/src/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "vue-tools.helloWorld",
-				"title": "Hello World"
+				"command": "vue-tools.vueTools",
+				"title": "Vue Tools"
 			}
 		]
 	},
