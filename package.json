@@ -13,7 +13,7 @@
 	],
 	"activationEvents": [
 		"onCommand:vue-tools.vueTools",
-		"onLanguage:plaintext"
+		"onLanguage:javascript"
 	],
 	"configuration": {
 		"type": "object",
@@ -43,6 +43,7 @@
 					"source.js"
 				],
 				"embeddedLanguages": {
+					"string.quoted.single.js": "html",
 					"meta.embedded.block.html": "html"
 				}
 			}

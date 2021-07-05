@@ -1,6 +1,6 @@
 {
     "scopeName": "vue.injection",
-    "injectionSelector": "R:string.quoted.single -comment",
+    "injectionSelector": "L:string.quoted.single -comment",
     "patterns": [
         {
             "contentName": "meta.embedded.block.html",
