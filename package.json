@@ -4,7 +4,7 @@
 	"description": "Vue development tools",
 	"author": "Filip Rak",
 	"publisher": "filiprak",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.57.0"
 	},
@@ -12,27 +12,15 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:vue-tools.vueTools",
 		"onLanguage:javascript"
 	],
-	"configuration": {
-		"type": "object",
-		"title": "Example configuration",
-		"properties": {
-			"languageServerExample.maxNumberOfProblems": {
-				"scope": "resource",
-				"type": "number",
-				"default": 100,
-				"description": "Controls the maximum number of problems produced by the server."
-			}
-		}
-	},
 	"main": "./client/src/extension.js",
 	"contributes": {
-		"commands": [
+		"semanticTokenTypes": [
 			{
-				"command": "vue-tools.vueTools",
-				"title": "Vue Tools"
+				"id": "translatable",
+				"superType": "string",
+				"description": "Translatable interpolation tag string."
 			}
 		],
 		"grammars": [

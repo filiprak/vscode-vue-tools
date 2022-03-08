@@ -6,34 +6,12 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Launch Client",
+			"name": "Launch",
 			"type": "extensionHost",
 			"request": "launch",
 			"args": [
 				"--extensionDevelopmentPath=${workspaceFolder}"
 			]
-		},
-		{
-			"type": "node",
-			"request": "attach",
-			"name": "Attach to Server",
-			"port": 6009,
-			"restart": true
-		},
-		{
-			"name": "Launch Client Tests",
-			"type": "extensionHost",
-			"request": "launch",
-			"args": [
-				"--extensionDevelopmentPath=${workspaceFolder}",
-				"--extensionTestsPath=${workspaceFolder}/test/suite/index"
-			]
-		},
-	],
-	"compounds": [
-		{
-			"name": "Client + Server",
-			"configurations": ["Launch Client", "Attach to Server"]
 		}
 	]
 }

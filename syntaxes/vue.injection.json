@@ -12,7 +12,11 @@
         },
         {
             "match":"{{_(\\*[a-zA-Z]{2,4}\\*)?(.*?)_}}",
-            "name": "comment"
+            "name": "ikolTranslatableString"
+        },
+        {
+            "match":"{{(?!_)(.*?)(?!_)}}",
+            "name": "vueInterpolationTags"
         }
     ]
 }
