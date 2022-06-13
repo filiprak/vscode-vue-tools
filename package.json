@@ -4,7 +4,7 @@
 	"description": "Vue development tools",
 	"author": "Filip Rak",
 	"publisher": "filiprak",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.57.0"
 	},
@@ -12,7 +12,10 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onLanguage:javascript"
+		"onLanguage:javascript",
+		"onLanguage:javascriptreact",
+		"onLanguage:typescript",
+		"onLanguage:typescriptreact"
 	],
 	"main": "./client/src/extension.js",
 	"contributes": {
@@ -25,14 +28,65 @@
 		],
 		"grammars": [
 			{
-				"scopeName": "vue.injection",
-				"path": "./syntaxes/vue.injection.json",
 				"injectTo": [
-					"source.js"
+					"source.js",
+					"source.js.jsx",
+					"source.jsx",
+					"source.ts",
+					"source.tsx",
+					"text.html.basic"
 				],
+				"scopeName": "inline.vue-tools.html",
+				"path": "./syntaxes/html.injection.json",
 				"embeddedLanguages": {
-					"string.quoted.single.js": "html",
-					"meta.embedded.block.html": "html"
+					"meta.embedded.block.html": "html",
+					"meta.embedded.block.css": "css",
+					"source.css": "css"
+				}
+			},
+			{
+				"injectTo": [
+					"source.js",
+					"source.js.jsx",
+					"source.jsx",
+					"source.ts",
+					"source.tsx",
+					"text.html.basic"
+				],
+				"scopeName": "inline.vue-tools.string",
+				"path": "./syntaxes/string.injection.json",
+				"embeddedLanguages": {
+					"meta.template.expression.ts": "typescript"
+				}
+			},
+			{
+				"injectTo": [
+					"source.js",
+					"source.js.jsx",
+					"source.jsx",
+					"source.ts",
+					"source.tsx",
+					"text.html.basic"
+				],
+				"scopeName": "inline.vue-tools.style",
+				"path": "./syntaxes/style.injection.json",
+				"embeddedLanguages": {
+					"meta.template.expression.ts": "typescript"
+				}
+			},
+			{
+				"injectTo": [
+					"source.js",
+					"source.js.jsx",
+					"source.jsx",
+					"source.ts",
+					"source.tsx",
+					"text.html.basic"
+				],
+				"scopeName": "inline.vue-tools.svg",
+				"path": "./syntaxes/svg.injection.json",
+				"embeddedLanguages": {
+					"meta.embedded.block.svg": "xml"
 				}
 			}
 		]
