@@ -19,6 +19,31 @@
 	],
 	"main": "./client/src/extension.js",
 	"contributes": {
+		"configuration": [
+            {
+                "id": "vue-tools",
+                "title": "Vue Tools",
+                "properties": {
+                    "vue-tools.tags": {
+                        "type": "array",
+                        "description": "List of template tags to enable html intellisense in.",
+                        "items": {
+                            "type": "string",
+                            "description": "Tag name."
+                        },
+                        "default": [
+                            "html",
+                            "raw"
+                        ]
+                    },
+                    "vue-tools.format.enabled": {
+                        "type": "boolean",
+                        "description": "Enable/disable formatting of html template strings.",
+                        "default": true
+                    }
+                }
+            }
+        ],
 		"semanticTokenTypes": [
 			{
 				"id": "translatable",
@@ -96,6 +121,9 @@
 		"pretest": "npm run lint",
 		"test": "node ./test/runTest.js",
 		"build": "vsce package"
+	},
+	"dependencies": {
+		"typescript-lit-html-plugin": "^0.9.0"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.57.0",
