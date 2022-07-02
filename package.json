@@ -33,13 +33,14 @@
                         },
                         "default": [
                             "html",
-                            "raw"
+                            "raw",
+							"starts:<"
                         ]
                     },
                     "vue-tools.format.enabled": {
                         "type": "boolean",
                         "description": "Enable/disable formatting of html template strings.",
-                        "default": true
+                        "default": false
                     }
                 }
             }
@@ -114,7 +115,13 @@
 					"meta.embedded.block.svg": "xml"
 				}
 			}
-		]
+		],
+        "typescriptServerPlugins": [
+            {
+                "name": "typescript-lit-html-plugin",
+                "enableForWorkspaceTypeScriptVersions": true
+            }
+        ]
 	},
 	"scripts": {
 		"lint": "eslint .",
@@ -123,7 +130,7 @@
 		"build": "vsce package"
 	},
 	"dependencies": {
-		"typescript-lit-html-plugin": "^0.9.0"
+		"typescript-lit-html-plugin": "file:../typescript-lit-html-plugin"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.57.0",

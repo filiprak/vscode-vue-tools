@@ -4,30 +4,6 @@ const typeScriptExtensionId = 'vscode.typescript-language-features';
 const pluginId = 'typescript-lit-html-plugin';
 const configurationSection = 'vue-tools';
 
-module.exports = async function activate (context) {
-    const extension = vscode.extensions.getExtension(typeScriptExtensionId);
-    if (!extension) {
-        return;
-    }
-
-    await extension.activate();
-    if (!extension.exports || !extension.exports.getAPI) {
-        return;
-    }
-    const api = extension.exports.getAPI(0);
-    if (!api) {
-        return;
-    }
-
-    vscode.workspace.onDidChangeConfiguration(e => {
-        if (e.affectsConfiguration(configurationSection)) {
-            synchronizeConfiguration(api);
-        }
-    }, undefined, context.subscriptions);
-
-    synchronizeConfiguration(api);
-}
-
 function synchronizeConfiguration (api) {
     api.configurePlugin(pluginId, getConfiguration());
 }
@@ -60,4 +36,34 @@ function withConfigValue (config, key, withValue) {
     if (typeof value !== 'undefined') {
         withValue(value);
     }
+}
+
+async function activate (context) {
+    console.log('Activating vue-tools - foo-bar');
+
+    const extension = vscode.extensions.getExtension(typeScriptExtensionId);
+    if (!extension) {
+        return;
+    }
+
+    await extension.activate();
+    if (!extension.exports || !extension.exports.getAPI) {
+        return;
+    }
+    const api = extension.exports.getAPI(0);
+    if (!api) {
+        return;
+    }
+
+    vscode.workspace.onDidChangeConfiguration(e => {
+        if (e.affectsConfiguration(configurationSection)) {
+            synchronizeConfiguration(api);
+        }
+    }, undefined, context.subscriptions);
+
+    synchronizeConfiguration(api);
+}
+
+module.exports = {
+    activate
 }

@@ -15,14 +15,11 @@
         {
             "name": "string.js.taggedTemplate",
             "contentName": "meta.embedded.block.html",
-            "begin": "(template:)(\\s+)(`)",
+            "begin": "(`)",
             "beginCaptures": {
-                "1": {
-                    "name": "entity.name.function.tagged-template.js"
-                },
-                "2": {
-                    "name": "punctuation.definition.string.template.begin.js"
-                }
+				"0": {
+					"name": "punctuation.definition.string.template.begin.js"
+				}
             },
             "end": "(`)",
             "endCaptures": {
@@ -41,6 +38,14 @@
                     "include": "text.html.basic"
                 }
             ]
+        },
+        {
+            "match":"{{_(\\*[a-zA-Z]{2,4}\\*)?(.*?)_}}",
+            "name": "ikolTranslatableString"
+        },
+        {
+            "match":"{{(?!_)(.*?)(?!_)}}",
+            "name": "vueInterpolationTags"
         }
     ],
     "scopeName": "inline.vue-tools.html"
