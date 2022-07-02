@@ -130,7 +130,7 @@
 		"build": "vsce package"
 	},
 	"dependencies": {
-		"typescript-lit-html-plugin": "file:../typescript-lit-html-plugin"
+		"typescript-lit-html-plugin": "https://github.com/filiprak/typescript-lit-html-plugin.git"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.57.0",
@@ -142,6 +142,6 @@
 		"mocha": "^8.4.0",
 		"typescript": "^4.3.2",
 		"vscode-test": "^1.5.2",
-		"vsce": "^2.6.7"
+		"vsce": "^2.9.2"
 	}
 }
