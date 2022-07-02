@@ -15,18 +15,21 @@
         {
             "name": "string.js.taggedTemplate",
             "contentName": "meta.embedded.block.html",
-            "begin": "(`)",
+            "begin": "(template)(\\:)(\\s*)(`)",
             "beginCaptures": {
 				"0": {
+					"name": "variable.other.property.js"
+				},
+				"1": {
+					"name": "punctuation.separator.key-value.js"
+				},
+				"2": {
 					"name": "punctuation.definition.string.template.begin.js"
 				}
             },
             "end": "(`)",
             "endCaptures": {
                 "0": {
-                    "name": "string.js"
-                },
-                "1": {
                     "name": "punctuation.definition.string.template.end.js"
                 }
             },
