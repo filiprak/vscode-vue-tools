@@ -39,8 +39,6 @@ function withConfigValue (config, key, withValue) {
 }
 
 async function activate (context) {
-    console.log('Activating vue-tools - foo-bar');
-
     const extension = vscode.extensions.getExtension(typeScriptExtensionId);
     if (!extension) {
         return;
